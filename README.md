@@ -1,6 +1,6 @@
 Учебный проект студента факультета Веб-разработки. Бэкенд проекта Movies.
 
-[Cайт](https://movies.parfion.nomoredomainsrocks.ru) размещен на Яндекс.Облаке.
+[Cайт](https://movies.parfion.nomoredomainsmonster.ru) размещен на Яндекс.Облаке.
 
 Адрес репозитория: https://github.com/parfion/movies-explorer-api
 
