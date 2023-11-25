@@ -1,8 +1,11 @@
 /* eslint-disable no-console */
 const express = require('express');
+require('dotenv').config();
 const mongoose = require('mongoose');
+const helmet = require('helmet');
 const cors = require('cors');
 const { errors } = require('celebrate');
+const { limiter } = require('./middlewares/rateLimit');
 const router = require('./routes/index');
 const errorHandler = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -18,7 +21,9 @@ mongoose.connect(MONGO_URL, {
   .then(() => console.log('Connected to MongoDB'));
 
 const app = express();
+app.use(helmet());
 app.use(cors());
+app.use(limiter);
 app.use(express.json());
 
 app.use(requestLogger);
